@@ -1,8 +1,14 @@
 #!/usr/bin/python3
 import datetime
 import sys
-import pygame
 import time
+import os
+
+with open(os.devnull, 'w') as f:
+    oldstdout = sys.stdout
+    sys.stdout = f
+    import pygame
+    sys.stdout = oldstdout
 
 try:
     pygame.init()
